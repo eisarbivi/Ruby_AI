@@ -14,7 +14,7 @@ from api import *
 sys.stdout = open(sys.stdout.fileno(), mode="w", encoding="utf8", buffering=1)
 
 os.environ["OPENAI_API_KEY"] = api_key
-source_file_path = "C:\Coding\Ruby_AI\document(s) data\Data of CN and FP.txt"
+source_file_path = "Ruby_AI\document(s) data\Data of CN and FP.txt"
 
 
 def extract_metadata_from_pdf(file_path: str) -> dict:
@@ -148,7 +148,7 @@ if __name__ == "__main__":
         document_chunks,
         embeddings,
         collection_name=cn,
-        persist_directory="C:\Coding\Ruby_AI\document(s) data\chroma",
+        persist_directory="Ruby_AI\document(s) data\chroma",
     )
     # Save DB locally
     vector_store.persist()

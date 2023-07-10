@@ -50,7 +50,7 @@ chat_prev = ""
 is_Speaking = False
 blacklist = ["Nightbot", "streamelements"]
 cn = ""
-source_file_path = "C:\Coding\Ruby_AI\document(s) data\Data of CN and FP.txt"
+source_file_path = "Ruby_AI\document(s) data\Data of CN and FP.txt"
 
 
 def record_audio():
@@ -171,7 +171,7 @@ def read_document_2():
         vector_store = Chroma(
             collection_name=cn,
             embedding_function=embedding,
-            persist_directory="C:\Coding\Ruby_AI\document(s) data\chroma",
+            persist_directory="Ruby_AI\document(s) data\chroma",
         )
 
         return ConversationalRetrievalChain.from_llm(
@@ -259,7 +259,7 @@ def yt_livechat(video_id):
                     chat_raw = re.sub(r":[^\s]+:", "", c.message)
                     chat_raw = chat_raw.replace("#", "")
                     # chat_author makes the chat look like this: "Nightbot: Hello". So the assistant can respond to the user's name
-                    chat = c.author.name + " berkata " + chat_raw
+                    chat = c.author.name + " said " + chat_raw
                     print(chat)
 
                 time.sleep(1)
